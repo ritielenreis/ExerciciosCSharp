@@ -22,42 +22,37 @@ namespace PKX.Controllers
         }
 
         // GET: Items
-        public IActionResult Index(int idCliente)
+        public async Task<IActionResult> Index(String? s, int? Id)
         {
-            ViewBag.LISTADECLIENTES = new SelectList(dbp.Clientes, "Id", "NomeCliente");
 
+            var applicationDbContext = dbp.Itens.Include(i => i.ClienteVirtual).Include(i => i.TipoVirtual);
 
-            ViewBag.ITENS = "";
-            ViewBag.QTDITENS = 0;
+            Cliente c = dbp.Clientes.FirstOrDefault(m => m.NomeCliente == s);
 
-            //verifica se é o primeiro acesso
-            if (idCliente == 0) { idCliente = -1; }
-
-            //executa o codigo se nao for o primeiro acesso
-            if (idCliente != -1)
+            if (c != null)
             {
-
-                var itensLista = dbp.Itens.Where(i => i.ClienteId == idCliente).ToList();
-                //a ViewBag.ITENS recebe os valores da pesquisa
-
-                foreach (var itens in itensLista)
-                {
-                    var idTipo = itens.TipoId;
-
-                    var nomeTipo = dbp.Tipos.Where(i => i.Id == idTipo);
-
-                }
-
-                if (itensLista.Count() > 0)
-                {
-                    ViewBag.ITENS = itensLista;
-
-
-                    //conta a quantidade de itens
-                    ViewBag.QTDITENS = itensLista.Count();
-                }
+                Id = c.Id;
             }
-            return View();
+            else { Id = -1; }
+
+            //ViewBag.ListaClientes = new SelectList(_context.Clientes.OrderBy(m => m.NomeCliente), "Id", "NomeCliente", Id);
+
+            if (Id.HasValue)
+            {
+                ViewBag.ListaItens = dbp.Itens
+                    .Where(m => m.ClienteId == Id)
+                    .ToList();
+            }
+            else
+            {
+                ViewBag.ListaItens = new List<Item>();
+            }
+
+
+
+
+
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Items/Details/5
