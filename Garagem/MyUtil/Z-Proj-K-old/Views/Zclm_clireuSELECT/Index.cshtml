@@ -1,0 +1,79 @@
+﻿@model IEnumerable<KRONOS.Models.clm_clireu>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+@Html.DropDownList("str_cli_id_drop",
+                 (SelectList)ViewBag.lista_de_clientes, new { onchange = "this.form.submit();" })}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cli.codcli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.textodescricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.textopresentes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reservado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.historico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli.codcli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.textodescricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.textopresentes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reservado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.historico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

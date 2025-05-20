@@ -1,0 +1,371 @@
+﻿@model KRONOS.Models.clm_clientes
+
+@{
+    ViewBag.Title = "D";
+}
+
+<h6>Detalhes do registo. Editar ou voltar, ao fundo.</h6>
+
+<div>
+   
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codcli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codcli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telemovel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telemovel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.morada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.morada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CP)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.NIF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codcerper)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codcerper)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalAT_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalAT_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalAT_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalAT_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalSS_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalSS_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalSS_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalSS_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalIAPMEI_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalIAPMEI_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalIAPMEI_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalIAPMEI_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalVCTT_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalVCTT_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalVCTT_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalVCTT_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalIEFP_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalIEFP_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalIEFP_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalIEFP_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalINE_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalINE_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalINE_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalINE_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fundo_comp_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fundo_comp_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fundo_comp_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fundo_comp_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banco_de_Portugal_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banco_de_Portugal_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banco_de_Portugal_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banco_de_Portugal_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Siifse_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Siifse_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Siifse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Siifse)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.SAGE_CNT_utilizador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAGE_CNT_utilizador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAGE_CNT_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAGE_CNT_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAGE_FAC_utilizador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAGE_FAC_utilizador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAGE_FAC_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAGE_FAC_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acesso_remoto_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acesso_remoto_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acesso_remoto_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acesso_remoto_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acesso_remoto_descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acesso_remoto_descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rel_unico_utilizador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rel_unico_utilizador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rel_unico_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rel_unico_senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.portugal_2020_utilizador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.portugal_2020_utilizador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.portugal_2020_senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.portugal_2020_senha)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.diversos1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diversos1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diversos2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diversos2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diversos3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diversos3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumContrato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumContrato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataY)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

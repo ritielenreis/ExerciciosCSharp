@@ -1,0 +1,49 @@
+﻿
+@{
+    if ((Context.Session.GetString("UTILIZADOR") == "##") || (Context.Session.GetString("UTILIZADOR") == null)){
+        <p>Fazer Login</p>
+    } else{
+        <form method="post" asp-controller="Items" asp-action="Index">
+            @Html.TextBox("s")
+        </form>
+        @if (ViewBag.ListaItens != null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Item 1
+                        </th>
+                        <th>
+                            Item 2
+                        </th>
+                        <th>
+                            Texto Complementar
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.ListaItens)
+                    {
+                        <tr>
+                            <td>
+                                @item.Item1)
+                            </td>
+                            <td>
+                                @item.Item2)
+                            </td>
+                            <td>
+                                @item.Texto)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        }
+    }
+
+}
+
+

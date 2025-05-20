@@ -1,0 +1,69 @@
+﻿@model IEnumerable<KRONOS.Models.clm_memogesI>
+
+@{
+    ViewBag.Title = "MG";
+}
+<br />
+<h8>MEMOGES I: DEPÓSITO DE ITENS DIVERSOS</h8>
+
+<p>
+    @Html.ActionLink("NOVO REGISTO", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                Localizar em Item
+            </td>
+            <td>
+                @Html.TextBox("strfiltroitem")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Localizar em Texto 1 e Texto 2 &nbsp;
+            </td>
+            <td>
+                @Html.TextBox("strfiltrotexto")&nbsp;<input type="submit" value="FILTRAR" />&nbsp;&nbsp;&nbsp;
+                [<h7>@ViewBag.contadorparcial</h7> registos de  <h8>@ViewBag.contadortotal</h8>]
+            </td>
+        </tr>
+    </table>
+
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.item)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.texto1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.texto2)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.item)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.texto1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.texto2)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,42 @@
+﻿@model KRONOS.Models.clm_memogesI
+
+@{
+    ViewBag.Title = "D";
+}
+<br />
+<h2>Detalhes</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.item)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.item)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.texto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.texto1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.texto2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.texto2)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

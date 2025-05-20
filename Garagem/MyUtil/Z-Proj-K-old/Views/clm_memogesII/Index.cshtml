@@ -1,0 +1,39 @@
+﻿@model IEnumerable<KRONOS.Models.clm_memogesII>
+
+@{
+    ViewBag.Title = "I";
+}
+<br />
+<h7>LISTAGEM DOS ITEMS EXISTENTES</h7><br />
+
+Para cada item pode guardar várias linhas de informação, no formulário anterior.
+<div align="right">
+    <br />
+    <h7>@Html.ActionLink("VOLTAR", "Index", "clm_MemogesII_linhas")
+    </h7>
+</div>
+
+<p>
+    @Html.ActionLink("NOVO REGISTO", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.item)
+        </th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.item)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @*@Html.ActionLink("Detalhes", "Details", new { id=item.ID }) |*@                               
+            @Html.ActionLink("Apagar", "Delete", new { id = item.ID })          
+        </td>
+    </tr>
+}
+
+</table>

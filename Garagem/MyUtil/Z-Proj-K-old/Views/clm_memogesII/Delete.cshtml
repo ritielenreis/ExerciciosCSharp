@@ -1,0 +1,53 @@
+﻿@model KRONOS.Models.clm_memogesII
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>ELIMINAR ITEM</h3>
+
+<h3></h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.item)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.item)
+        </dd>
+
+    </dl>
+
+    (Este item tem <h7>@ViewBag.contadordelete</h7> registos associados.)<br />
+    (Se tiver items associados, remova-os no formulário anterior e volte aqui.)
+    <br />
+    @{if (ViewBag.contadordelete == 0)
+        {
+            using (Html.BeginForm())
+            {
+                    @Html.AntiForgeryToken()
+                    <div class="form-actions no-color">
+                    <input type="submit" value="Apagar" class="btn btn-default" /> |
+                    @Html.ActionLink("Voltar", "Index")
+                    </div>
+            }
+        }
+        else
+        {
+            <br />
+            using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    
+                    @Html.ActionLink("Voltar", "Index")
+                </div>
+            }
+        }
+    }
+    <br />
+   
+
+</div>
