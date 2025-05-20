@@ -1,0 +1,75 @@
+﻿@model IEnumerable<KRONOS.Models.clm_memogesII_linhas>
+
+@{    ViewBag.Title = "Index";}
+
+<br />
+<h8>MEMOGES II: DEPÓSITO DE DADOS PARA ITENS PRÉ-DEFINIDOS</h8>
+
+@ViewBag.codigostrfiltro <br />
+<div align="right">
+    <h7>@Html.ActionLink("ADICIONAR NOVO ITEM", "Index", "clm_MemogesII")</h7>
+    <br /><h6>(+ listar, eliminar, e alterar nome)</h6>
+</div>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                Reduzir itens na lista pendente:</td><td>@Html.TextBox("strfiltroitem")
+                <input type="submit" value="FILTRAR" />&nbsp;&nbsp;&nbsp;Nº de registos:@ViewBag.contadoraux
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Localizar em Item
+            </td>
+            <td>
+                @Html.DropDownList("itemID", (SelectList)ViewBag.itemID, "Escolher aqui:", new { onchange = "this.form.submit();" })              
+                [Items na lista pendente: <h7>@ViewBag.contadorauxfiltrado</h7> / Total de items: <h8>@ViewBag.contadorauxtotal</h8>]
+            </td>
+        </tr>
+    </table>
+}
+<p>
+    <br />
+    @Html.ActionLink("NOVO REGISTO", "Create")
+    <br />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.parte.item)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.texto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.parte.item)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.texto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataY)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@ 
+                       
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+}
+</table>
+<br />
+ [Total de linhas filtradas: <h7>@ViewBag.contadorlinhasfiltradas</h7> / Total de linhas: <h8>@ViewBag.contadorlinhastotal</h8>]
+@ViewData["listagem"]

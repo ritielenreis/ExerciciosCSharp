@@ -1,0 +1,16 @@
+﻿
+@using (Html.BeginForm())
+{
+    <br />
+    <div style="width:300px" ; align="right">
+        <label>Utilizador</label>
+        @Html.TextBox("utilizador", null, new { style = "width: 200px;" })<br />
+
+        <label>Senha</label>
+        @Html.Password("senha", null, new { style = "width:200px;" })<br />
+        <input type="submit" value="OK" class="btn btn-default" />
+
+    </div>
+
+}
+O Login está, de momento, fora de funções.

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<KRONOS.Models.clm_clientes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h6>Dados dos clientes. Para mais dados, clicar  em Detalhes</h6>
+<h6>O último campo, data, fica com 1999-12-31. Quando for possível, ir atualizando essa data (cliente desde...)</h6>
+<p>
+    @Html.ActionLink("NOVO REGISTO", "Create")
+</p>
+@using (Html.BeginForm())
+{
+
+                @Html.TextBox("stringfiltro")
+                <input type="submit" value="FILTRAR" />
+}           
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.codcli)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cliente)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.telefone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.telemovel)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.fax)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.morada)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CP)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NIF)
+                    </th>
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codcli)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cliente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telefone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telemovel)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fax)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.morada)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CP)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>

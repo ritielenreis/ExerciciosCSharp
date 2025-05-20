@@ -1,0 +1,72 @@
+﻿@model KRONOS.Models.clm_contactos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>ELIMINAR</h2>
+
+<h3>Tem a certeza que quer apagar?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telemovel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telemovel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.morada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.morada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anotacoes1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anotacoes1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anotacoes2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anotacoes2)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

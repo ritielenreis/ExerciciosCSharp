@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "i";
+}
+<br />
+<h6>(Procura pela designação do restaurante e não pela localidade)</h6>
+@using (Html.BeginForm())
+{
+    <br />
+    <h8>EXEMPLO DE CONEXÃO A WEB SERVICE EM PORTUGAL </h8><br />
+
+    <h7>Digitar string:</h7>
+    @Html.TextBox("stringfiltro")
+    <input type="submit" value="Procurar" />
+}
+
+<br />
+
+Lista de restaurantes da cadeia McDonalds em Portugal, que satisfazem a pesquisa: (Total <h7>@ViewBag.contador)</h7>)<br />
+
+@foreach (var item in ViewBag.lista)
+{
+    <br />
+    @item.Value <label> , </label>
+    @item.Text
+}

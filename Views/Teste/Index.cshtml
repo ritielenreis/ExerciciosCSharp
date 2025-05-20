@@ -1,0 +1,39 @@
+﻿<h1>Págnia teste</h1>
+
+<div>
+    <p>Há algum Utilizador Logado?</p>
+
+    @{
+        var utilizador = Context.Session.GetString("UTILIZADOR");
+
+        if (utilizador != "##" && utilizador != null)
+        {
+            <p>Sim</p>
+        }
+        else
+        {
+            <p>Não</p>
+        }
+    }
+</div>
+
+<div>
+    <p>O Utilizador Logado é um ADM?</p>
+
+    @{
+        var adm = Context.Session.GetString("Privilegios");
+
+        if (adm == "true")
+        {
+            <p>Sim</p>
+        }
+        else
+        {
+            <p>Não</p>
+        }
+    }
+</div>
+
+
+
+

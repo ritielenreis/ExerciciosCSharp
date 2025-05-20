@@ -1,0 +1,31 @@
+﻿ALTERAÇÕES NO CONTROLADOR:
+
+método index todo---------------------------------------------
+
+
+
+médoto create, definir valor por omissão: 
+	
+	ViewBag.cliID = new SelectList(db.Tclientes, "ID", "codcli", Session["clinadrop"]);
+
+
+
+
+
+
+
+
+
+
+
+ALTERAÇÕES NA VIEW
+
+campo texto-mudar para TextAreaFor:
+	@Html.TextAreaFor(model => model.textodescricao, new { style = "width: 280px; height: 300px;" })
+
+
+campo mostrável, esconder:
+
+
+dropdownlist p/ cliente, ocultar:
+

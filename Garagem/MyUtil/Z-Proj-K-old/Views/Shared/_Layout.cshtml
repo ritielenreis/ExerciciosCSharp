@@ -1,0 +1,80 @@
+﻿@using Ngeral.Controllers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K/@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- texto a apresentar +  método a invocar +  controlador pretendido -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>              
+            </div>
+            <div class="navbar-collapse collapse">
+                <table>
+                    <tr>
+                        <td width="60%">
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("  K   ", "Index", "Home",
+                                   null,
+                                   new {
+                                       title = "KRONOS - página inicial",
+                                       style = "color:red; font-size:40px; font-weight: bold" })
+                                </li>
+                               
+                                <li>@Html.ActionLink("DOCS","index","Documentos", null, new { title = "Documentos da empresa em formato PDF" })</li>
+                                <li>@Html.ActionLink("LT", "Index", "clm_contactos", null, new { title = "Lista telefónica: pessoas e organizações não clientes" }) </li>
+                                <li>@Html.ActionLink("CLIDADOS", "Index", "clm_clientes", null, new { title = "Clientes: contactos, logins e senhas" })</li>
+                                <li>@Html.ActionLink("CLIREU", "Index", "clm_clireu", null, new { title = "Registo de reuniões e apontamentos de clientes" })</li>
+                                <li>@Html.ActionLink("MG1", "Index", "clm_memogesI", null, new { title = "MemoGes 1: aplicação para registo de informações X" })</li>
+                                <li>@Html.ActionLink("MG2", "Index", "clm_memogesII_linhas", null, new { title = "MemoGes 2: aplicação para registo de informações Y" })</li>
+                               
+</ul>
+                        </td>
+                        <td width="40%" align="right">
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("In", "Index", "clLogins", null, new { title = "Efetuar login para ganhar acesso priveligiado"})</li>
+                                <li>@Html.ActionLink("Out", "logout", "clLogins", null, new { title = "Logout, para descer o nível de privilégio" })</li>
+                                
+                                @*
+                                    <li>
+                                        @Html.ActionLink((string)Session["user"] == "" ? " " : " (" + (string)Session["user"] + ")",
+                                            "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                                    </li>
+                                *@
+                                <li>@Html.ActionLink(myfuncs.greeting((string)Session["user"]), "", "" , new { style = "color:cyan" })</li>  
+                                <li>@Html.ActionLink("S", "Index", "Sobre", null, new { title = "Versões da aplicação e da instância da base de dados" })</li>
+                                <li>@Html.ActionLink("Bkf", "Index", "Backup", null, new { title = "Executar cópia de segurança da base de dados" ,  style = "color:yellow" })</li>
+                                <li>@Html.ActionLink("BkDB", "Index", "Backupdb", null, new { title = "Executar cópia de segurança da base de dados", style = "color:yellow" })</li>
+
+                                <li>@Html.ActionLink("Ws", "Index", "service", null, new { title = "Conexão a Web Service", style = "color:blue" })</li>
+
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Kronos - Pjmconta </p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

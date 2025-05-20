@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CD2\**" />
+    <Compile Remove="Clientes\**" />
+    <Compile Remove="Garagem\MyUtil\Z-Proj-K-old\**" />
+    <Compile Remove="Tipoes\**" />
+    <Content Remove="CD2\**" />
+    <Content Remove="Clientes\**" />
+    <Content Remove="Garagem\MyUtil\Z-Proj-K-old\**" />
+    <Content Remove="Tipoes\**" />
+    <EmbeddedResource Remove="CD2\**" />
+    <EmbeddedResource Remove="Clientes\**" />
+    <EmbeddedResource Remove="Garagem\MyUtil\Z-Proj-K-old\**" />
+    <EmbeddedResource Remove="Tipoes\**" />
+    <None Remove="CD2\**" />
+    <None Remove="Clientes\**" />
+    <None Remove="Garagem\MyUtil\Z-Proj-K-old\**" />
+    <None Remove="Tipoes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Didaticos\backupsController.cs" />
+    <Compile Remove="Garagem\MyUtil\backupDB.cs" />
+    <Compile Remove="Garagem\MyUtil\connection.cs" />
+    <Compile Remove="Garagem\MyUtil\copyfileController.cs" />
+    <Compile Remove="Garagem\MyUtil\filtro_autorizacao.cs" />
+    <Compile Remove="Garagem\MyUtil\myfuncs.cs" />
+    <Compile Remove="Views\Login\Index1.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Login\Index1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Administradores\Index.cshtml" />
+    <None Include="Views\Didaticos\Drop\Index.cshtml" />
+    <None Include="Views\Didaticos\Drop\Outra.cshtml" />
+    <None Include="Views\GCliSenhas\Criar.cshtml" />
+    <None Include="Views\GCliSenhas\Editar.cshtml" />
+    <None Include="Views\GCliSenhas\Eliminar.cshtml" />
+    <None Include="Views\GCliSenhas\Index.cshtml" />
+    <None Include="Views\PaginaTeste\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Garagem\MyUtil\" />
+  </ItemGroup>
+
+</Project>

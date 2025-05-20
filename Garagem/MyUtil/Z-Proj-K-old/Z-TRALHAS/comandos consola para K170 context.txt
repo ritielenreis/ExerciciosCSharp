@@ -1,0 +1,20 @@
+﻿
+
+
+enable-migrations -contexttypename clContext
+
+
+
+add-migration -name 18b -connectionstring "server=LEOPARDO,62444;database=K170;uid=sa;password=123.abc;" -ConnectionProviderName "system.data.sqlclient"
+
+
+
+update-database -connectionstring "server=LEOPARDO,62444;database=K170;uid=sa;password=123.abc;" -ConnectionProviderName "system.data.sqlclient"
+
+
+
+
+170321:(por causa databela clireu)
+enable-migrations -contexttypename clContext -EnableAutomaticMigrations -Force
+Add-Migration Initial
+update-database

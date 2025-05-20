@@ -1,0 +1,19 @@
+﻿
+
+
+enable-migrations -contexttypename clContext
+
+
+
+add-migration -name 18b -connectionstring "server=LEOPARDO,62444;database=K170;uid=sa;password=123.abc;" -ConnectionProviderName "system.data.sqlclient"
+
+
+
+update-database -connectionstring "server=LEOPARDO,62444;database=K170;uid=sa;password=123.abc;" -ConnectionProviderName "system.data.sqlclient"
+
+
+
+
+kronos 181:
+Enable-Migrations -ContextTypeName KRONOS.DAL.clContext -force
+

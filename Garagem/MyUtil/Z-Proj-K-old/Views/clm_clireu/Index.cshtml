@@ -1,0 +1,149 @@
+﻿@model IEnumerable<KRONOS.Models.clm_clireu>
+
+@{
+    ViewBag.Title = "";
+}
+@using (Html.BeginForm())
+{
+    <br />
+        <h8>CADASTRO DE APONTAMENTOS E REUNIÕES COM CLIENTES </h8><label> (Cliente @ViewBag.str_cli_id_drop)</label>
+        <table width="100%">
+        <tr>
+            <td width="30%">
+                Diminuir a lista de clientes:<br />
+                @Html.TextBox("stringfiltro")
+                <input type="submit" value="Filtrar" />
+                <p>  </p>
+                @Html.DropDownList("str_cli_id_drop",
+                 (SelectList)ViewBag.cliID, new { onchange = "this.form.submit();" })
+            </td>
+            <td width="25%" align="left">
+                <table>
+                    <tr><td>Total de clientes:</td><td><h12b>@ViewBag.contaclitotal</h12b></td></tr>
+                    <tr><td>Clientes na lista pendente:</td><td><h12r>@ViewBag.contaclinadrop</h12r></td></tr>
+                    <tr><td>Total de mensagens: </td><td><h12b>@ViewBag.contalinhastotal</h12b></td></tr>
+                    <tr><td>Total de mensagens do cliente: </td><td><h12b>@ViewBag.contalinhasdocliente</h12b></td></tr>
+                    <tr><td>Total de mensagens mostradas:</td><td><h12r>@ViewBag.contalinhasparcial</h12r></td></tr>
+                </table>                             
+            </td>
+            <td width="25%" align="center">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>S</td>
+                        <td>N</td>
+                        <td>T</td>
+                    </tr>
+                    <tr>
+                    <td>Importantes:</td>
+                    <td>@Html.RadioButton("radioopcaoI", "S", (bool)@ViewBag.radiobuttonimportante)</td>
+                    <td>@Html.RadioButton("radioopcaoI", "N")</td>
+                    <td>@Html.RadioButton("radioopcaoI", "T")</td>
+                    </tr>
+
+                    <tr>
+                        <td>Reservadas:</td>
+                        <td>@Html.RadioButton("radioopcaoR", "S")</td>
+                        <td>@Html.RadioButton("radioopcaoR", "N", (bool)ViewBag.radiobuttonreservada) </td>
+                        <td>@Html.RadioButton("radioopcaoR", "T") </td>
+                    </tr>
+
+                    <tr>
+                        <td>No histórico:</td>
+                        <td>@Html.RadioButton("radioopcaoH", "S")</td>
+                        <td>@Html.RadioButton("radioopcaoH", "N", (bool)ViewBag.radiobuttonhistorico)</td>
+                        <td>@Html.RadioButton("radioopcaoH", "T")</td>
+                    </tr>
+                
+                </table>
+                          
+                <input type="submit" value="Refrescar página" />
+            </td>
+            <td width="20%">
+                <table>
+                    <tr>
+                        <td align="right">Ordenar data:</td>
+                        <tr><td align="right">Crescente:@Html.RadioButton("radioopcaoOrdenarPorData", "C")</td></tr>
+                        <tr><td align="right">Decrescente:@Html.RadioButton("radioopcaoOrdenarPorData", "D", (bool)ViewBag.radiobuttonreservada) </td> </tr>                     
+                    </tr>
+                </table>
+            </td>
+        </tr>   
+    </table>
+  
+}
+<hr />
+<table>    
+    <tr>
+    <td width="50%">@Html.ActionLink("NOVO REGISTO", "Create", new { id = ViewBag.str_cli_id_drop } ) </td>
+    <td width="50%" align="right">
+        Legenda: I? importante | R? reservada ou interna | H? histórico
+    </td>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cli.codcli)       
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.textodescricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.textopresentes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reservado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.historico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli.codcli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.textodescricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.textopresentes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reservado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.historico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=item.ID })
+
+        </td>
+    </tr>
+}
+
+</table>

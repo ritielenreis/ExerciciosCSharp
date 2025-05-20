@@ -1,0 +1,273 @@
+﻿@model IEnumerable<KRONOS.Models.clm_clientes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codcli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telemovel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.morada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NIF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codcerper)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalAT_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalAT_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalSS_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalSS_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalIAPMEI_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalIAPMEI_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalVCTT_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalVCTT_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalIEFP_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalIEFP_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalINE_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalINE_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fundo_comp_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fundo_comp_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Banco_de_Portugal_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Banco_de_Portugal_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Siifse_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Siifse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAGE_CNT_utilizador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAGE_CNT_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAGE_FAC_utilizador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAGE_FAC_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.acesso_remoto_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.acesso_remoto_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.acesso_remoto_descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rel_unico_utilizador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rel_unico_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.portugal_2020_utilizador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.portugal_2020_senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumContrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codcli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telemovel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.morada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NIF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codcerper)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalAT_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalAT_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalSS_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalSS_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalIAPMEI_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalIAPMEI_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalVCTT_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalVCTT_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalIEFP_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalIEFP_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalINE_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalINE_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fundo_comp_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fundo_comp_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Banco_de_Portugal_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Banco_de_Portugal_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Siifse_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Siifse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAGE_CNT_utilizador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAGE_CNT_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAGE_FAC_utilizador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAGE_FAC_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.acesso_remoto_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.acesso_remoto_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.acesso_remoto_descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rel_unico_utilizador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rel_unico_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.portugal_2020_utilizador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.portugal_2020_senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumContrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
